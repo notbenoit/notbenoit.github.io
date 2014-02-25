@@ -1,3 +1,9 @@
-body {
-  min-height: 2000px;
+.navbar li:hover {
+	background-color: #DF3132;
+	color: white;
+	transition: all 0.5s;
+}
+
+.navbar li a:hover {
+	color: white;
 }
