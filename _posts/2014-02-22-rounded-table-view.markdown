@@ -30,7 +30,7 @@ You can do this modification with the appearance protocol wherever you want.
 Then you have to set an inset to avoid the view being stuck to the borders of the screen (the view can also be resized in a nib for instance...). Remember, we want to mimic iOS6 style, so we set a margin on each side of the UITableView.
 
 {% highlight c %}
-_tableView.frame = CGRectInset(_tableView.frame, 20.f, 20.f);
+_tableView.frame = CGRectInset(_tableView.frame, 20.f, 0.f);
 {% endhighlight %}
 
 If you have set your tableview style to Grouped, then you should have something similar to this.
@@ -62,7 +62,7 @@ To do this, we are gonna subclass UITableView to modify its drawing in the layou
             // If there is a single row, we round the cell by each corner
             if (topCell == bottomCell)
             {
-                CAShapeLayer *shape = [[[CAShapeLayer alloc] init] autorelease];
+                CAShapeLayer *shape = [[CAShapeLayer alloc] init];
                 shape.path = [UIBezierPath bezierPathWithRoundedRect:topCell.bounds
                                                         cornerRadius:cornerRadius].CGPath;
                 topCell.layer.mask = shape;
@@ -71,7 +71,7 @@ To do this, we are gonna subclass UITableView to modify its drawing in the layou
             else
             {
                 // Create the top mask we will apply on the cell to round it.
-                CAShapeLayer *topShape = [[[CAShapeLayer alloc] init] autorelease];
+                CAShapeLayer *topShape = [[CAShapeLayer alloc] init];
                 topShape.path = [UIBezierPath bezierPathWithRoundedRect:topCell.bounds
                                                       byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight
                                                             cornerRadii:CGSizeMake(cornerRadius, cornerRadius)].CGPath;
@@ -79,7 +79,7 @@ To do this, we are gonna subclass UITableView to modify its drawing in the layou
                 topCell.layer.masksToBounds = YES;
                 
                 // Create the bottom mask we will apply on the cell to round it.
-                CAShapeLayer *bottomShape = [[[CAShapeLayer alloc] init] autorelease];
+                CAShapeLayer *bottomShape = [[CAShapeLayer alloc] init];
                 bottomShape.path = [UIBezierPath bezierPathWithRoundedRect:bottomCell.bounds
                                                          byRoundingCorners:UIRectCornerBottomLeft|UIRectCornerBottomRight
                                                                cornerRadii:CGSizeMake(cornerRadius, cornerRadius)].CGPath;
@@ -116,12 +116,20 @@ By the way, since you have subclassed UITableView, we can apply here some tricks
     {
         // Side margin
         CGFloat sideOffset = 8.f;
-        [self setFrame:CGRectInset(self.frame, sideOffset, 0.f)];
+        self.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+        self.separatorInset = UIEdgeInsetsZero;
+        self.frame = CGRectInset(self.frame, sideOffset, 0.f);
     }
 }
 {% endhighlight %}
 
+The final result should look like this :
 
+![Result][result]
+
+Of course, you can adjust the colors as you want, as for the corner radius or the frame inset.
+These modifications do not cost a lot in terms of performance. The rasterization avoid offscreen rendering, and the mask is not that complicated. I've tested this implementation on UITableView with thousands of items, and just noticed a little drop in performance when pushing a UIViewController with such modifications. Feel free to use this trick, and even more to improve it!
 
 
 [id]: /images/rounded-table-view/startingpoint.png  "Starting point"
+[result]: /images/rounded-table-view/result.png  "Result"
