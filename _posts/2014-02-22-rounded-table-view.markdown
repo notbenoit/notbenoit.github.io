@@ -15,21 +15,21 @@ For the demo, you will need to have a simple controller with a UITableView and a
 
 First, you will want to get rid of the extra rows that live at the bottom of the UITableView (we have those rows because our UITableView content is not long enough to fill the whole space).
 
-{% highlight c %}
+{% highlight objc%}
 _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 {% endhighlight %}
 
 Then the separators, we want them to stick to the left :
 
-{% highlight c %}
+{% highlight objc%}
 _tableView.separatorInset = UIEdgeInsetsZero;
 {% endhighlight %}
 
-You can do this modification with the appearance protocol wherever you want.
+You can also do this modification with the appearance protocol wherever you want.
 
 Then you have to set an inset to avoid the view being stuck to the borders of the screen (the view can also be resized in a nib for instance...). Remember, we want to mimic iOS6 style, so we set a margin on each side of the UITableView.
 
-{% highlight c %}
+{% highlight objc%}
 _tableView.frame = CGRectInset(_tableView.frame, 20.f, 0.f);
 {% endhighlight %}
 
@@ -37,10 +37,10 @@ If you have set your tableview style to Grouped, then you should have something 
 Now the tricky part is to round the top corners of the first cell of each section, and the bottom corners of the bottom cell of each section.
 
 To do this, we are gonna subclass UITableView to modify its drawing in the layoutSubviews method.
-{% highlight c %}
+{% highlight objc%}
 #define IS_IOS7_AND_UP() ([[UIDevice currentDevice].systemVersion floatValue] >= 7.f)
 {% endhighlight %}
-{% highlight c %}
+{% highlight objc%}
 - (void)layoutSubviews
 {
     [super layoutSubviews];
@@ -106,9 +106,9 @@ To do this, we are gonna subclass UITableView to modify its drawing in the layou
 }
 {% endhighlight %}
 
-By the way, since you have subclassed UITableView, we can apply here some tricks we used just before. You can for instance set the inset stuff in the willMoveToSuperview: method. Like this : 
+By the way, since you have subclassed UITableView, we can apply here some tricks we used just before. You can for instance set the inset stuff and the footer trick in the willMoveToSuperview: method. Like this : 
 
-{% highlight c %}
+{% highlight objc%}
 - (void)willMoveToSuperview:(UIView *)newSuperview
 {
     [super willMoveToSuperview:newSuperview];
