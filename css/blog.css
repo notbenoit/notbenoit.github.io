@@ -1,5 +1,5 @@
 body {
-	padding-top: 50px;
+	padding-top: 55px;
 	background-color: #F4F4F4;
 }
 
@@ -9,13 +9,19 @@ body {
 	border: dashed 1px;
 }
 
+.post-container {
+	border-top: 10px solid #C46A7C;
+}
+
 .meta {
 	font-style: italic;
 }
 
 .navbar li:hover {
-	background-color: #DF3132;
+	background-color: #E08D61;
 	color: white;
+	opacity: 0.7;
+	-webkit-filter: invert(100%);
 	transition: all 0.5s;
 }
 
@@ -23,18 +29,26 @@ body {
 	color: white;
 }
 
+.navbar-nav {
+	float: right;
+}
+
+.navbar-nav img {
+	width: 25px;
+	height: 25px;
+}
+
 .jumbotron h1 a {
 	color: white;
 }
 
 .jumbotron {
-	background-color: #2B9FFF;
-	opacity: 0.7;
+	background-color: #69B9F7;
+	border-bottom: 10px solid #C46A7C;
 	color: white;
 }
 
-.post-thumbnail {
-	padding: 10px;
-	box-shadow: 1px 1px 3px #cccccc;
-	background-color: white;
+footer p {
+	color: #919195;
+	text-align: center;
 }
