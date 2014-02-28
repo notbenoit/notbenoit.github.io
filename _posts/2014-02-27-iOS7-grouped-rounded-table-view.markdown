@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Missing the rounded UITableView ?"
+title:  "Missing the grouped rounded UITableView ?"
 date:   2014-02-27 17:29:45
 categories: jekyll update
 author: "Benoît Layer"
