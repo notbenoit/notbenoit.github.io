@@ -2,7 +2,7 @@
 layout: post
 title:  "Missing the grouped rounded UITableView ?"
 date:   2014-02-27 17:29:45
-categories: jekyll update
+categories: iOS7 UITableView
 author: "Benoît Layer"
 ---
 Everyone knows iOS7 introduced a huge earthquake in UIKit look and feel. I mean, every component changed, from the simple rounded rect button to the style of a whole UITableView. If you are a bit nostalgic of your old rounded grouped UITableView on iOS6, this is made for you. 
@@ -34,6 +34,9 @@ _tableView.frame = CGRectInset(_tableView.frame, 20.f, 0.f);
 {% endhighlight %}
 
 If you have set your tableview style to Grouped, then you should have something similar to this.
+
+###The tricky part goes here.
+
 Now the tricky part is to round the top corners of the first cell of each section, and the bottom corners of the bottom cell of each section.
 
 To do this, we are gonna subclass UITableView to modify its drawing in the layoutSubviews method.
@@ -49,13 +52,13 @@ To do this, we are gonna subclass UITableView to modify its drawing in the layou
     if (self.style == UITableViewStyleGrouped && IS_IOS7_AND_UP())
     {
         // For each section, we round the first and last cell
-        int numberOfSections = [self.dataSource numberOfSectionsInTableView:self];
+        NSInteger numberOfSections = [self.dataSource numberOfSectionsInTableView:self];
         for (int i = 0 ; i < numberOfSections ; i++)
         {
             static CGFloat cornerRadius = 8.f;
             
             // Get first and last cell
-            int numberOfRows = [self.dataSource tableView:self numberOfRowsInSection:i];
+            NSInteger numberOfRows = [self.dataSource tableView:self numberOfRowsInSection:i];
             UITableViewCell *topCell = [self cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:i]];
             UITableViewCell *bottomCell = [self cellForRowAtIndexPath:[NSIndexPath indexPathForRow:numberOfRows-1 inSection:i]];
             
@@ -131,5 +134,8 @@ Of course, you can adjust the colors as you want, as for the corner radius or th
 These modifications do not cost a lot in terms of performance. The rasterization avoid offscreen rendering, and the mask is not that complicated. I've tested this implementation on UITableView with thousands of items, and just noticed a little drop in performance when pushing a UIViewController with such modifications. Feel free to use this trick, and even more to improve it!
 
 
+You can find the UITableView subclass, and a sample project [here][github].
+
 [id]: /images/rounded-table-view/startingpoint.png  "Starting point"
 [result]: /images/rounded-table-view/result.png  "Result"
+[github]: https://github.com/notbenoit/GroupedTableView
