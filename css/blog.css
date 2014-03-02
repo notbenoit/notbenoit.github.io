@@ -9,6 +9,14 @@ body {
 	border: dashed 1px;
 }
 
+code {
+    color: gray;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #888888;
+    font : 1em "andale mono";    
+} 
+
 .post-container {
 	border-top: 10px solid #C46A7C;
 }
