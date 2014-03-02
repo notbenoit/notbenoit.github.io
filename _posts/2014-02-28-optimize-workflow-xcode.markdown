@@ -7,9 +7,9 @@ author: "Benoît Layer"
 ---
 Xcode is the IDE you'll be always using when developing MacOS apps or iOS apps. It's sometimes frustrating, and sometimes brillant, here are some hints to optimize your workflow and keep your brain fresh when using it.
 
-I can already hear people saying that's we do not have to use Xcode all the time. It's true. For all the text based files, you can use whatever your want. SublimeText or Vim, or AppCode from JetBrains. But when it comes to editing nibs and storyboard, the choice is all made, you'll have to use Xcode (as far as I know).
+I can already hear people saying that we do not have to use Xcode all the time. It's true. For all text based files, you can use whatever your want. SublimeText, Vim, or AppCode from JetBrains. But when it comes to editing nibs and storyboard, the choice is all made, you'll have to use Xcode (as far as I know).
 
-After years working with Xcode, you learn to to overpass the first feeling you had with it. Of course, the time of Xcode 3 is way behind us, and Xcode 4 made the things a lot better, believe me.
+After years working with Xcode, you learn to overpass the first feeling you had with it. Of course, the time of Xcode 3 is way behind us, and Xcode 4 made the things a lot better, believe me.
 
 ###My eyes are bleeding!
 
@@ -20,6 +20,30 @@ Lets's begin with the visual part. This is not specific to Xcode or any IDE, but
 All colors are dimmed, and the background is not a full black color, but rather a dimmed pastel black. You can find the colorscheme [here][xcode-zenburn], with the instructions to change you colorscheme in Xcode.
 
 ###Shortcut time
+There are lots of shortcuts in Xcode, some you can't do without, and some that you'll forget very soon.
+
+#### Build and run `⌘ R`
+This is alot quicker than clicking on the top left 'play' arrow. This shortcut is the one you'll use the most often.
+
+#### Stop `⌘ .`
+Kills the current running app. With the previous shortcut, this one a must use.
+
+#### Clean `⇧ ⌘ K`
+Perform a clean action on the current project.
+
+#### Organizer `⌘ 2`
+Show the organizer. Useful if you want to check your provisioning profiles, or some documentation.
+
+#### Search everywhere `⇧ ⌘ F`
+Perform a search on the whole project.
+
+#### Jump to next counterpart `^ ⌘ ↑` / `^ ⌘ ↓`
+This is also a very useful one. Switch easily between a .m file and its .h. You can also do a three fingers vertical swipe.
+
+#### Open Quickly `⇧ ⌘ O`
+Okay, this is THE shortcut. It allows you to open any file in your workspace, or in any linked framework directly by tapping its name, or part of its name.
+
+![Open Quickly][open-quickly]
 
 ###Usefull little hints
 
@@ -30,3 +54,4 @@ All colors are dimmed, and the background is not a full black color, but rather 
 [xcode-zenburn]: https://github.com/an0/Zenburn-for-Xcode
 
 [xcode-zenburn-img]:/images/workflow-xcode/xcode-zenburn.png
+[open-quickly]:/images/workflow-xcode/open_quickly.gif
