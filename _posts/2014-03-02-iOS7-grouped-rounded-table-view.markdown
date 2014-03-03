@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "Missing the grouped rounded UITableView ?"
-date:   2014-03-02 17:29:45
-categories: iOS7 UITableView
+date:   2014-03-02 19:32:05
+categories: Development
+tags: iOS UITableView
 author: "Benoît Layer"
 ---
 Everyone knows iOS7 introduced a huge earthquake in UIKit look and feel. I mean, every component changed, from the simple rounded rect button to the style of a whole UITableView. If you are a bit nostalgic of your old rounded grouped UITableView on iOS6, this is made for you. 

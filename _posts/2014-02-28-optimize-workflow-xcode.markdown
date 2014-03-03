@@ -2,7 +2,8 @@
 layout: post
 title:  "Optimize your workflow in Xcode"
 date:   2014-02-27 17:29:45
-categories: Xcode Workflow
+categories: Development
+tags: Xcode Workflow
 author: "Benoît Layer"
 ---
 Xcode is the IDE you'll be always using when developing MacOS apps or iOS apps. It's sometimes frustrating, and sometimes brillant, here are some hints to optimize your workflow and keep your brain fresh when using it.
