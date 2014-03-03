@@ -55,7 +55,7 @@ Last but not least, the code snippets. On the right pane, you have the snippet l
 
 ![Snippets][xcode-snippets]
 
-But the best part of it, is creating your own snippets. For instance, I built a snippet to generate appledoc comments (used for good documentation). To create this kind of snippet, just type in the editor the text you want to become a snippet. The interesting part is when you want placeholder texts for your snippet. Just surround your text with `<#` and `#>`. The hard part is here, the drag and drop of your snippet in the library. With a mouse you have to do it with both clicks pressed (whereas it will do another selection). On a trackpad, honestly I don't remember... Once your snippet is saved in your library, edit its name, its shortcut, its use cases... Then try it !
+But the best part of it, is creating your own snippets. For instance, I built a snippet to generate appledoc comments (used for good documentation). To create this kind of snippet, just type in the editor the text you want to become a snippet. The interesting part is when you want placeholder texts for your snippet. Just surround your text with `<#` and `#>`. The hard part is here, the drag and drop of your snippet in the library. With a mouse you have to do it with both clicks pressed (whereas it will do another selection). On a trackpad, you have to press the trackpad, and not only swipe with three fingers (depending of course on your configuration). Once your snippet is saved in your library, edit its name, its shortcut, its use cases... Then try it !
 
 ![Snippet description][xcode-snippet-desc]
 
@@ -66,8 +66,11 @@ But the best part of it, is creating your own snippets. For instance, I built a 
 ***
 This was a preview of all the possibilities Xcode has to offer. Now it's your turn to build your own snippet or find your favorite shortcuts. Remember that you will learn a key combination once, or take three minutes to build a snippet, and you will be rewarded by earning a lot of time in the future.
 
+Also, some snippets I've shown you represents [Appledoc][appledoc] comments. Maybe I'll cover this in a future post, come back soon.
+
 [zenburn]: http://slinky.imukuppi.org/zenburnpage/
 [xcode-zenburn]: https://github.com/an0/Zenburn-for-Xcode
+[appledoc]: http://gentlebytes.com/appledoc/
 [xcode-zenburn-img]:/images/workflow-xcode/xcode-zenburn.png
 [open-quickly]:/images/workflow-xcode/open_quickly.gif
 [filter]:/images/workflow-xcode/xcode_filter.gif
