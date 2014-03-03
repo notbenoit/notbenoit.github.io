@@ -46,12 +46,33 @@ Okay, this is THE shortcut. It allows you to open any file in your workspace, or
 ![Open Quickly][open-quickly]
 
 ###Usefull little hints
+A useful tip you'll have to remember when working on huge projects, is the filter field in the left pane. It allows you to filter any tab you are currently displaying. For instance, on the project navigator tab, you can filter your classes with their name. You'll use this filter when finding a given set of files. Imagine all you model classes contain the "Model" word. If you want to display only your models, just filter your project with the word "model". Below is an example on the word "ViewController" to get all classes containing this word.
+
+![Filter][filter]
 
 ###Snippets, I love you !
+Last but not least, the code snippets. On the right pane, you have the snippet library. Xcode contains a lot of snippets out of the box. Have a look there and find the snippets you that can be useful to you.
 
+![Snippets][xcode-snippets]
+
+But the best part of it, is creating your own snippets. For instance, I built a snippet to generate appledoc comments (used for good documentation). To create this kind of snippet, just type in the editor the text you want to become a snippet. The interesting part is when you want placeholder texts for your snippet. Just surround your text with `<#` and `#>`. The hard part is here, the drag and drop of your snippet in the library. With a mouse you have to do it with both clicks pressed (whereas it will do another selection). On a trackpad, honestly I don't remember... Once your snippet is saved in your library, edit its name, its shortcut, its use cases... Then try it !
+
+![Snippet description][xcode-snippet-desc]
+
+![Snippet edition][xcode-snippet-lib]
+
+![Snippet usage][xcode-appledoc]
+
+***
+This was a preview of all the possibilities Xcode has to offer. Now it's your turn to build your own snippet or find your favorite shortcuts. Remember that you will learn a key combination once, or take three minutes to build a snippet, and you will be rewarded by earning a lot of time in the future.
 
 [zenburn]: http://slinky.imukuppi.org/zenburnpage/
 [xcode-zenburn]: https://github.com/an0/Zenburn-for-Xcode
-
 [xcode-zenburn-img]:/images/workflow-xcode/xcode-zenburn.png
 [open-quickly]:/images/workflow-xcode/open_quickly.gif
+[filter]:/images/workflow-xcode/xcode_filter.gif
+[xcode-snippets]:/images/workflow-xcode/xcode_snippets.jpg
+[xcode-snippet-desc]: /images/workflow-xcode/xcode_user_snippet.gif
+[xcode-snippet-lib]: /images/workflow-xcode/xcode_snippet_lib.jpg
+[xcode-appledoc]: /images/workflow-xcode/xcode_appledoc.gif
+

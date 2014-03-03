@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Missing the grouped rounded UITableView ?"
-date:   2014-02-27 17:29:45
+date:   2014-03-02 17:29:45
 categories: iOS7 UITableView
 author: "Benoît Layer"
 ---
