@@ -14,27 +14,27 @@ For the demo, you will need to have a simple controller with a UITableView and a
 
 ###Okay, let's do this !
 
-First, you will want to get rid of the extra rows that live at the bottom of the UITableView (we have those rows because our UITableView content is not long enough to fill the whole space).
-
-{% highlight objc%}
-_tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-{% endhighlight %}
-
-Then the separators, we want them to stick to the left :
+The first main thing we are going to do is changing the separators' inset ; we want them to stick to the left :
 
 {% highlight objc%}
 _tableView.separatorInset = UIEdgeInsetsZero;
 {% endhighlight %}
 
-You can also do this modification with the appearance protocol wherever you want.
+You can also do this modification with the appearance protocol wherever you want. This can also be changed in your nib file.
+
+![Separators in nib][separators]
+
+If you have extra rows that live at the bottom of the UITableView (you have those rows because your UITableView's content is not long enough to fill the whole space), you can *hide* them by setting an empty footer to your UITableView.
+
+{% highlight objc%}
+_tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+{% endhighlight %}
 
 Then you have to set an inset to avoid the view being stuck to the borders of the screen (the view can also be resized in a nib for instance...). Remember, we want to mimic iOS6 style, so we set a margin on each side of the UITableView.
 
 {% highlight objc%}
 _tableView.frame = CGRectInset(_tableView.frame, 20.f, 0.f);
 {% endhighlight %}
-
-If you have set your tableview style to Grouped, then you should have something similar to this.
 
 ###The tricky part goes here.
 
@@ -110,7 +110,7 @@ To do this, we are gonna subclass UITableView to modify its drawing in the layou
 }
 {% endhighlight %}
 
-By the way, since you have subclassed UITableView, we can apply here some tricks we used just before. You can for instance set the inset stuff and the footer trick in the willMoveToSuperview: method. Like this : 
+By the way, since we have subclassed UITableView, we can apply here some tricks we used just before. You can for instance set the inset stuff and the footer trick in the willMoveToSuperview: method. Like this : 
 
 {% highlight objc%}
 - (void)willMoveToSuperview:(UIView *)newSuperview
@@ -132,11 +132,12 @@ The final result should look like this :
 ![Result][result]
 
 Of course, you can adjust the colors as you want, as for the corner radius or the frame inset.
-These modifications do not cost a lot in terms of performance. The rasterization avoid offscreen rendering, and the mask is not that complicated. I've tested this implementation on UITableView with thousands of items, and just noticed a little drop in performance when pushing a UIViewController with such modifications. Feel free to use this trick, and even more to improve it!
+These modifications do not cost a lot in terms of performance. The rasterization avoid offscreen rendering, and the mask is not that complicated. I've tested this implementation on UITableView with hundreds of items, and just noticed a little drop in performance when pushing a UIViewController with such modifications. Feel free to use this trick, and even more to improve it!
 
 
 You can find the UITableView subclass, and a sample project [here][github].
 
-[id]: /images/rounded-table-view/startingpoint.png  "Starting point"
-[result]: /images/rounded-table-view/result.png  "Result"
+[id]: /images/rounded-table-view/startingpoint.jpg  "Starting point"
+[separators]: /images/rounded-table-view/separators.jpg  "Separators in nib"
+[result]: /images/rounded-table-view/result.jpg  "Result"
 [github]: https://github.com/notbenoit/GroupedTableView
