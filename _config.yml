@@ -1,6 +1,5 @@
 name: "[b layer]"
 markdown: redcarpet
 highlighter: pygments
-pygments: true
 baseurl: /
 url: http://benoitlayer.com/
