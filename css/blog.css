@@ -13,15 +13,48 @@ h4>code {
     background: white;
     border-radius: 4px;
     border: 1px solid #888888;
-    font : 1em "andale mono";   
-} 
-
-.post-container {
-	border-top: 10px solid #C46A7C;
+    font : 1em "andale mono";
 }
 
-.meta {
-	font-style: italic;
+strong {
+	color: #799F48;
+}
+
+.post-container {
+
+}
+
+.container {
+	max-width: 970px;
+}
+
+#recent article {
+	display: block;
+}
+
+#recent article h2 a {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	color: #6C94A7;
+	font-size: 80%;
+}
+
+#recent article p {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 5;
+	-webkit-box-orient: vertical;
+	text-overflow: -o-ellipsis-lastline;
+}
+
+article p {
+	font-family: 'Crimson Text', serif;
+	font-size: 135%;
+}
+
+.highlight {
+	width: 85%;
+	margin: auto;
 }
 
 .navbar li:hover {
@@ -45,17 +78,43 @@ h4>code {
 	height: 25px;
 }
 
-.jumbotron h1 a {
-	color: white;
+.jumbotron h1 a, .jumbotron h1 {
+	color: #EEEEEE;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 100;
+	font-size: 45px;
 }
 
 .jumbotron {
-	background-color: #69B9F7;
-	border-bottom: 10px solid #C46A7C;
+	background-color: #6C94A7;
+	border-bottom: 10px solid #8AAC5A;
+
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.jumbotron p {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
 	color: white;
+}
+
+.jumbotron p.meta {
+	font-size: 85%;
+	font-style: italic;
+}
+
+.logo {
+	margin-top: 20px;
 }
 
 footer p {
 	color: #919195;
 	text-align: center;
+}
+
+@media (min-width:992px) {
+	#recent article {
+		height: 20em;
+	}
 }

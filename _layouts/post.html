@@ -1,12 +1,18 @@
 ---
 layout: default
 ---
-<div class="post-container"></div>
-<div class="container">
-	<h2>{{ page.title }}</h2>
-	<p class="meta">Written by {{ page.author }} on {{ page.date | date_to_long_string }}</p>
-        <hr/>
 
+<div class="jumbotron">
+	<div class="container">
+		<h1>{{ page.title }}</h1>
+		<p>{{ post.excerpt }}</p>
+		<p class="meta">Written by {{ page.author }} on {{ page.date | date_to_long_string }}</p>
+	</div>
+</div>
+
+
+<div class="post-container"></div>
+<article class="container">
 	<div class="post">
 	{{ content }}
 	</div>
@@ -27,4 +33,4 @@ layout: default
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</div>
+</article>
