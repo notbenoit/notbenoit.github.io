@@ -2,11 +2,30 @@
 layout: default
 ---
 
+{% capture day %}{{ page.date | date: "%-d" }}{% endcapture %}
+{% capture dayLastTwoDigits %}{{ day | modulo: 100 }}{% endcapture %}
+{% if dayLastTwoDigits >= "11" and dayLastTwoDigits <= "13" %}
+		{% assign ordinal = "th" %}
+{% else %}
+		{% capture dayLastDigit %}{{ day | modulo: 10 }}{% endcapture %}
+		{% case dayLastDigit %}
+				{% when "1" %}
+						{% assign ordinal = "st" %}
+				{% when "2" %}
+						{% assign ordinal = "nd" %}
+				{% when "3" %}
+						{% assign ordinal = "rd" %}
+				{% else %}
+						{% assign ordinal = "th" %}
+		{% endcase %}
+{% endif %}
+{% capture ordinalDay %}{{ day | append: ordinal }}{% endcapture %}
+
 <div class="jumbotron">
 	<div class="container">
 		<h1>{{ page.title }}</h1>
 		<p>{{ post.excerpt }}</p>
-		<p class="meta">Written by {{ page.author }} on {{ page.date | date_to_long_string }}</p>
+		<p class="meta">Written by {{ page.author }} on <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%A" }} {{ ordinalDay }} {{ page.date | date: "of %b, %Y" }}</time></p>
 	</div>
 </div>
 
