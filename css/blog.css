@@ -20,6 +20,15 @@ strong {
 	color: #799F48;
 }
 
+p>code {
+	font-size: 13px;
+	line-height: 1.42857143;
+	color: #333;
+	background-color: #f5f5f5;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
 .post-container {
 
 }
