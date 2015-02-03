@@ -5,6 +5,9 @@ date:   2015-02-01 00:15:00
 categories: Development
 tags: swift shimming shim
 author: "Benoît Layer"
+excerpt: "According to Wikipedia, a shim is :
+'[...] a small library that transparently intercepts API calls and changes the arguments passed, handles the operation itself, or redirects the operation elsewhere [...]'
+"
 ---
 
 Ever heard of Shimming ?
@@ -14,7 +17,6 @@ According to [Wikipedia][shim_wikipedia], a shim is :
 {% highlight text %}
 [...] a small library that transparently intercepts API calls and changes the arguments passed, handles the operation itself, or redirects the operation elsewhere [...]
 {% endhighlight %}
-
 
 At the WWDC 2014 ([233][233]), Elizabeth Reid showed what they called in the iWork team **Shimming**. It is simply conditional compilation in order to use the same code on both iOS and OSX.
 
