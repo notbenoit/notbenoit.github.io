@@ -1,34 +1,96 @@
----
-layout: default
-title: [b layer]
----
+<!DOCTYPE HTML>
+<!--
+	Identity by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Benoît Layer</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-loading">
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-  <div class="container">
-<div class="row">
-    <div class="col-md-2 logo">
-      <img src="/images/logo.png" width="125" style="display: block" alt="bLayer">
-    </div>
-    {% assign post = site.posts.first %}
-    <div class="col-md-10">
-      <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-      <p>{{ post.excerpt }}</p>
-      <p><a class="btn btn-primary btn-lg" href="{{ post.url }}" role="button">Read more &raquo;</a></p>
-    </div>
-</div>
-  </div>
-</div>
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-<!-- Example row of columns -->
-<div class="container">
-  <div class="row" id="recent">
-    {% for post in site.posts offset:1 %}
-    <article class="col-md-4">
-      <h2><a href="{{ post.url }}">{{post.title}}</a></h2>
-      <p>{{post.excerpt}}</p>
-      <p><a class="btn btn-default" href="{{ post.url }}" role="button">Read more &raquo;</a></p>
-    </article>
-    {% endfor %}
-  </div>
-</div>
+				<!-- Main -->
+					<section id="main">
+						<header>
+							<span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
+							<h1>Benoît Layer</h1>
+							<p>iOS Developer</p>
+						</header>
+						<!--
+						<hr />
+						<h2>Extra Stuff!</h2>
+						<form method="post" action="#">
+							<div class="field">
+								<input type="text" name="name" id="name" placeholder="Name" />
+							</div>
+							<div class="field">
+								<input type="email" name="email" id="email" placeholder="Email" />
+							</div>
+							<div class="field">
+								<div class="select-wrapper">
+									<select name="department" id="department">
+										<option value="">Department</option>
+										<option value="sales">Sales</option>
+										<option value="tech">Tech Support</option>
+										<option value="null">/dev/null</option>
+									</select>
+								</div>
+							</div>
+							<div class="field">
+								<textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
+							</div>
+							<div class="field">
+								<input type="checkbox" id="human" name="human" /><label for="human">I'm a human</label>
+							</div>
+							<div class="field">
+								<label>But are you a robot?</label>
+								<input type="radio" id="robot_yes" name="robot" /><label for="robot_yes">Yes</label>
+								<input type="radio" id="robot_no" name="robot" /><label for="robot_no">No</label>
+							</div>
+							<ul class="actions">
+								<li><a href="#" class="button">Get Started</a></li>
+							</ul>
+						</form>
+						<hr />
+						-->
+						<footer>
+							<ul class="icons">
+								<li><a href="http://twitter.com/notbenoit" class="fa-twitter">Twitter</a></li>
+								<li><a href="https://fr.linkedin.com/in/benoitlayer" class="fa-linkedin">Linkedin</a></li>
+								<li><a href="http://github.com/notbenoit" class="fa-github">Github</a></li>
+							</ul>
+						</footer>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; Benoît Layer</li>
+							<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
+
+	</body>
+</html>
